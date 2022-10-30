@@ -8,7 +8,13 @@ const questions = [{
     type: "input",
     name: "title",
     message: "What is the name of the project?"
-},{
+},
+{
+    type: "input",
+    name: "description",
+    message: "Description: include a description of the project."
+},
+{
     type: "checkbox",
     name:"tableOfContents",
     message:"What will be included in the README.md table of contents?",
