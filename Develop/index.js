@@ -14,7 +14,6 @@ const questions = [{
     name: "description",
     message: "Description: include a description of the project."
 },
-
 {
     type: "input",
     name: "installation",
@@ -29,16 +28,13 @@ const questions = [{
     type: "input",
     name: "contributing",
     message: "Describe how to contribute to the project"
-
 },
 {
     type: "checkbox",
     choices: ["MIT","ISC","GNU GPLv3","Mozilla Public License 2.0"],
     message: "(Optional) Include a license:",
     name:"license"
-
 },
-
 {
     type: "input",
     name: "tests",
@@ -53,12 +49,8 @@ const questions = [{
     type: "input",
     name: "github",
     message: "Enter github username:"
-
 }
-
-
 ];
-
 
 // TODO: Create a function to write README file
 function writeToFile(fileName,data){
@@ -67,9 +59,9 @@ function writeToFile(fileName,data){
 
 // TODO: Create a function to initialize app
 function init() {
-    inquirer.prompt(questions).then((answers)=> {console.log(answers.license),
-     writeToFile("README.md",generateMarkdown(answers))}).catch((error)=>console.log(error))
-    
+    inquirer.prompt(questions)
+        .then((answers)=> writeToFile("README.md",generateMarkdown(answers)))
+        .catch((error)=>console.log(error))
 }
 
 // Function call to initialize app
