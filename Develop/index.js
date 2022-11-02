@@ -31,12 +31,6 @@ const questions = [{
     message: "Usage: describe the usage of the project"
 },
 {
-    type: "checkbox",
-    name: "license",
-    message: "Choose a license:",
-    choices: ["MIT", "ISC","GNU GPLv3","Apache License 2.0"]
-},
-{
     type: "input",
     name: "contributing",
     message: "Describe how to contribute to the project"
