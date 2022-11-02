@@ -63,7 +63,7 @@ function generateMarkdown(data) {
   ${renderLicenseLink(data.license)}
   ## Questions
   - email: ${data.email}
-  - [github:](https://github.com/${data.github}) 
+  - github: [${data.github}](https://github.com/${data.github}) 
 `;
 }
 
