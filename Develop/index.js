@@ -32,6 +32,14 @@ const questions = [{
 
 },
 {
+    type: "checkbox",
+    choices: ["MIT","ISC","GNU GPLv3","Mozilla Public License 2.0"],
+    message: "(Optional) Include a license:",
+    name:"license"
+
+},
+
+{
     type: "input",
     name: "tests",
     message: "(optional) Include tests for the project and how to run them"
@@ -59,7 +67,8 @@ function writeToFile(fileName,data){
 
 // TODO: Create a function to initialize app
 function init() {
-    inquirer.prompt(questions).then((answers)=>  writeToFile("README.md",generateMarkdown(answers))).catch((error)=>console.log(error))
+    inquirer.prompt(questions).then((answers)=> {console.log(answers.license),
+     writeToFile("README.md",generateMarkdown(answers))}).catch((error)=>console.log(error))
     
 }
 
