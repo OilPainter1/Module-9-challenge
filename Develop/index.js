@@ -14,12 +14,7 @@ const questions = [{
     name: "description",
     message: "Description: include a description of the project."
 },
-{
-    type: "checkbox",
-    name:"tableOfContents",
-    message:"What will be included in the README.md table of contents?",
-    choices: ["Installation","Usage","License","Contributing","Tests","Questions"]
-},
+
 {
     type: "input",
     name: "installation",
@@ -55,16 +50,16 @@ const questions = [{
 
 
 ];
-inquirer.prompt(questions).then((answers)=> console.log(generateMarkdown(answers)))
+
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-    fs.writeFile(fileName,)
-
+function writeToFile(fileName,data){
+    fs.writeFileSync(fileName,data)
 }
 
 // TODO: Create a function to initialize app
 function init() {
+    inquirer.prompt(questions).then((answers)=>  writeToFile("README.md",generateMarkdown(answers))).catch((error)=>console.log(error))
     
 }
 
